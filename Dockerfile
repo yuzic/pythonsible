@@ -17,12 +17,12 @@ RUN apk add --no-cache \
     krb5 \
     krb5-dev \
     krb5-libs \
-    musl-dev=1.1.19-r10 \
+#     musl-dev=1.1.19-r10 \
     openssh \
     openssl-dev \
 #     python2-dev=2.7.15-r1 \
-    py-cffi=1.10.0-r0 \
-    py-cryptography=2.1.4-r1 \
+#     py-cffi=1.10.0-r0 \
+#     py-cryptography=2.1.4-r1 \
 #     py2-pip=10.0.1-r0 \
 #     py-setuptools=39.1.0-r0 \
 #     py2-yaml=3.12-r1 \
