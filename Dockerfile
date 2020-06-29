@@ -26,12 +26,12 @@ RUN apk add --no-cache \
     py2-yaml=3.12-r1 \
     sshpass \
     git \
-    tar \
-  && apk add --no-cache --virtual build-dependencies \
+    tar
+RUN apk add --no-cache --virtual build-dependencies \
     gcc=6.4.0-r9 \
-    make=4.2.1-r2 \
-  && pip install --upgrade pip==18.0 
-  && pip install \ 
+    make=4.2.1-r2
+RUN pip install --upgrade pip==18.0 
+RUN pip install \ 
     ansible==2.7.6 \
     botocore==1.12.86 \
     boto==2.49.0 \
@@ -39,5 +39,5 @@ RUN apk add --no-cache \
     awscli==1.16.96 \
     pywinrm[kerberos]==0.3.0 \
     requests \
-    google-auth \
-  && apk del build-dependencies
+    google-auth
+RUN apk del build-dependencies
