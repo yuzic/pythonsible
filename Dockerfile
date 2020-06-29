@@ -1,11 +1,6 @@
 FROM centos:7
 
 RUN yum update -y
-RUN yum -y install centos-release-scl-rh
-RUN yum -y install rh-python38
-SHELL ["scl", "enable", "rh-python38"]
-RUN python -V
-RUN pip install virtualenv
 RUN apk add --no-cache \
     bzip2 \
     file \
@@ -41,3 +36,8 @@ RUN pip install \
     requests \
     google-auth
 RUN apk del build-dependencies
+RUN yum -y install centos-release-scl-rh
+RUN yum -y install rh-python38
+SHELL ["scl", "enable", "rh-python38"]
+RUN python -V
+RUN pip install virtualenv
