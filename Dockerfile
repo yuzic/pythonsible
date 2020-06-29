@@ -32,7 +32,7 @@ RUN apk add --no-cache \
  && apk add --no-cache --virtual build-dependencies \
     gcc=6.4.0-r9 \
     make=4.2.1-r2 \
- && pip install --upgrade pip==18.0 
+ && pip install --upgrade pip==18.0 \
  && pip install \
     ansible==2.7.6 \
     botocore==1.12.86 \
