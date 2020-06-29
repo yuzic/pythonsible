@@ -1,6 +1,7 @@
 FROM centos:7
 
 RUN yum update -y
+RUN yum install yum-utils
 RUN yum -y install \
     bzip2 \
     file \
@@ -22,10 +23,7 @@ RUN yum -y install \
     sshpass \
     git \
     tar
-RUN yum -y install \
-    build-dependencies \
-    gcc=6.4.0-r9 \
-    make=4.2.1-r2
+RUN yum-buildep gcc=6.4.0-r9 make=4.2.1-r2
 RUN pip install --upgrade pip==18.0 
 RUN pip install \ 
     ansible==2.7.6 \
@@ -36,7 +34,7 @@ RUN pip install \
     pywinrm[kerberos]==0.3.0 \
     requests \
     google-auth
-RUN yum clean build-dependencies
+RUN yum clean packages
 RUN yum -y install centos-release-scl-rh
 RUN yum -y install rh-python38
 SHELL ["scl", "enable", "rh-python38"]
