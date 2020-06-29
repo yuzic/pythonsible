@@ -12,15 +12,15 @@ RUN apk add --no-cache \
     bzip2 \
     file \
     gzip \
-    libffi=3.2.1-r4 \
-    libffi-dev=3.2.1-r4 \
+#     libffi=3.2.1-r4 \
+#     libffi-dev=3.2.1-r4 \
     krb5 \
     krb5-dev \
     krb5-libs \
     musl-dev=1.1.19-r10 \
     openssh \
     openssl-dev \
-    python2-dev=2.7.15-r1 \
+#     python2-dev=2.7.15-r1 \
     py-cffi=1.10.0-r0 \
     py-cryptography=2.1.4-r1 \
 #     py2-pip=10.0.1-r0 \
