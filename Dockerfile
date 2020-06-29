@@ -23,7 +23,7 @@ RUN yum -y install \
     sshpass \
     git \
     tar
-RUN yum-buildep gcc=6.4.0-r9 make=4.2.1-r2
+RUN yum-builddep gcc=6.4.0-r9 make=4.2.1-r2
 RUN pip install --upgrade pip==18.0 
 RUN pip install \ 
     ansible==2.7.6 \
