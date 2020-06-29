@@ -24,8 +24,8 @@ RUN yum -y install \
     git \
     tar
 RUN yum -y install \
-    gcc=6.4.0-r9 \
-    make=4.2.1-r2 \
+    gcc \
+    make \
  && pip install --upgrade pip==18.0 \
  && pip install \ 
     ansible==2.7.6 \
