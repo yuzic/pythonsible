@@ -1,12 +1,14 @@
-FROM centos:7
+# FROM centos:7
 
-RUN yum update -y
-RUN yum -y install centos-release-scl-rh
-RUN yum -y install rh-python38
-SHELL ["scl", "enable", "rh-python38"]
-RUN python -V
-RUN pip install virtualenv
-RUN yum -y install \
+# RUN yum update -y
+# RUN yum -y install centos-release-scl-rh
+# RUN yum -y install rh-python38
+# SHELL ["scl", "enable", "rh-python38"]
+# RUN python -V
+# RUN pip install virtualenv
+FROM python:3.8-alpine
+
+RUN apk add --no-cache \
     bzip2 \
     file \
     gzip \
@@ -26,12 +28,12 @@ RUN yum -y install \
     py2-yaml=3.12-r1 \
     sshpass \
     git \
-    tar
-RUN yum -y install \
-    gcc \
-    make \
- && pip install --upgrade pip==18.0 \
- && pip install \ 
+    tar \
+ && apk add --no-cache --virtual build-dependencies \
+    gcc=6.4.0-r9 \
+    make=4.2.1-r2 \
+ && pip install --upgrade pip==18.0 
+ && pip install \
     ansible==2.7.6 \
     botocore==1.12.86 \
     boto==2.49.0 \
@@ -40,4 +42,4 @@ RUN yum -y install \
     pywinrm[kerberos]==0.3.0 \
     requests \
     google-auth \
- && yum remove gcc make
+ && apk del build-dependencies
