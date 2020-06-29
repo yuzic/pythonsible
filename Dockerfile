@@ -1,7 +1,7 @@
 FROM centos:7
 
 RUN yum update -y
-RUN yum install \
+RUN yum -y install \
     bzip2 \
     file \
     gzip \
@@ -22,7 +22,7 @@ RUN yum install \
     sshpass \
     git \
     tar
-RUN yum iinstall \
+RUN yum -y install \
     build-dependencies \
     gcc=6.4.0-r9 \
     make=4.2.1-r2
