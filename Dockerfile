@@ -23,9 +23,11 @@ RUN yum -y install \
     sshpass \
     git \
     tar
-RUN yum-builddep gcc=6.4.0-r9 make=4.2.1-r2
-RUN pip install --upgrade pip==18.0 
-RUN pip install \ 
+RUN yum -y install \
+    gcc=6.4.0-r9 \
+    make=4.2.1-r2 \
+ && pip install --upgrade pip==18.0 \
+ && pip install \ 
     ansible==2.7.6 \
     botocore==1.12.86 \
     boto==2.49.0 \
@@ -33,8 +35,8 @@ RUN pip install \
     awscli==1.16.96 \
     pywinrm[kerberos]==0.3.0 \
     requests \
-    google-auth
-RUN yum clean packages
+    google-auth \
+ && yum remove gcc make
 RUN yum -y install centos-release-scl-rh
 RUN yum -y install rh-python38
 SHELL ["scl", "enable", "rh-python38"]
