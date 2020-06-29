@@ -29,7 +29,6 @@ RUN apk add --no-cache \
     sshpass \
     git \
     tar \
- && pip install --upgrade pip==18.0 \
  && pip install \
     ansible==2.7.6 \
     botocore==1.12.86 \
@@ -38,5 +37,4 @@ RUN apk add --no-cache \
     awscli==1.16.96 \
     pywinrm[kerberos]==0.3.0 \
     requests \
-    google-auth \
- && apk del gcc make
+    google-auth
