@@ -1,7 +1,7 @@
 FROM centos:7
 
 RUN yum update -y
-RUN apk add --no-cache \
+RUN yum install \
     bzip2 \
     file \
     gzip \
@@ -22,7 +22,8 @@ RUN apk add --no-cache \
     sshpass \
     git \
     tar
-RUN apk add --no-cache --virtual build-dependencies \
+RUN yum iinstall \
+    build-dependencies \
     gcc=6.4.0-r9 \
     make=4.2.1-r2
 RUN pip install --upgrade pip==18.0 
@@ -35,7 +36,7 @@ RUN pip install \
     pywinrm[kerberos]==0.3.0 \
     requests \
     google-auth
-RUN apk del build-dependencies
+RUN yum clean build-dependencies
 RUN yum -y install centos-release-scl-rh
 RUN yum -y install rh-python38
 SHELL ["scl", "enable", "rh-python38"]
