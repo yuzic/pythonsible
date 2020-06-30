@@ -14,4 +14,5 @@ RUN apk add --no-cache \
     python3-dev \
     musl-dev \
     libffi-dev \
+    g++ \
 && pip3 install virtualenv
