@@ -4,8 +4,8 @@ FROM python:3.8.3
 # RUN apk add --no-cache \
 RUN apt-get update && apt-get install -y \
     ansible \
-    openssh \
-    openssl-dev \
+    openssh-client \
+    libssl-dev \
     bzip2 \
     gzip \
     git \
