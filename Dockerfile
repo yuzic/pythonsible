@@ -8,4 +8,4 @@ RUN apk add --no-cache \
     gzip \
     git \
     tar \
-&& pip3 install virtualenv
+&& pip install virtualenv
