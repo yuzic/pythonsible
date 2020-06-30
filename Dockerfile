@@ -10,5 +10,5 @@ RUN apt-get update && apt-get install -y \
     gzip \
     git \
     tar \
-&& rm -rf /var/lib/apt/lists/*
+&& rm -rf /var/lib/apt/lists/* \
 && pip install virtualenv
