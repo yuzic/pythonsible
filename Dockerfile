@@ -9,4 +9,8 @@ RUN apk add --no-cache \
     git \
     tar \
     py3-pip \
+    postgresql-dev \
+    gcc \
+    python3-dev \
+    musl-dev \
 && pip3 install virtualenv
