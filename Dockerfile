@@ -1,6 +1,8 @@
-FROM alpine:3.12
+# FROM alpine:3.12
+FROM python:3.8.3
 
-RUN apk add --no-cache \
+# RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     ansible \
     openssh \
     openssl-dev \
@@ -8,11 +10,5 @@ RUN apk add --no-cache \
     gzip \
     git \
     tar \
-    py3-pip \
-    postgresql-dev \
-    gcc \
-    python3-dev \
-    musl-dev \
-    libffi-dev \
-    g++ \
-&& pip3 install virtualenv
+&& rm -rf /var/lib/apt/lists/*
+&& pip install virtualenv
