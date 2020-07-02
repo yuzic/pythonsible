@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     psycopg2-binary==2.8.4 \
     redis==3.4.1 \
     requests==2.23.0 \
-    SQLAlchemy==1.3.13
+    SQLAlchemy==1.3.13 \
     allure-pytest==2.8.16 \
     jira==2.0.0 \
     selenium==3.141.0 \
