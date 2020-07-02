@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 && rm -rf /var/lib/apt/lists/* \
 && pip install virtualenv \
 && virtualenv virtenv \
-&& source virtenv/bin/activate \
+&& . virtenv/bin/activate \
 && pip install \
     pika==0.12.0 \
     pytest==5.3.5 \
