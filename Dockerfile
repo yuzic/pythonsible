@@ -1,5 +1,9 @@
 FROM python:3.8.3
 
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
 RUN apt-get update && apt-get install -y \
     ansible \
     openssh-client \
@@ -9,9 +13,6 @@ RUN apt-get update && apt-get install -y \
     git \
     tar \
 && rm -rf /var/lib/apt/lists/* \
-&& pip install virtualenv \
-&& virtualenv virtenv \
-&& . virtenv/bin/activate \
 && pip install \
     pika==0.12.0 \
     pytest==5.3.5 \
