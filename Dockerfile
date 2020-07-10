@@ -10,7 +10,7 @@ RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN apt-get update && apt-get install -y \
-    ansible \
+#     ansible \
     openssh-client \
     libssl-dev \
     bzip2 \
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
 && pip --no-cache-dir install --upgrade pip \
 && pip --no-cache-dir install \
     mitogen \
-#     ansible==2.7.6 \
+    ansible==2.7.7 \
     pika==0.12.0 \
     pytest==5.3.5 \
     psycopg2-binary==2.8.4 \
