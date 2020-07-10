@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y \
     git \
     tar \
 && rm -rf /var/lib/apt/lists/* \
-&& pip --no-cache-dir install --upgrade pip \
-&& pip --no-cache-dir install \
+&& pip3 --no-cache-dir install --upgrade pip \
+&& pip3 --no-cache-dir install \
     mitogen \
     ansible==2.7.7 \
     pika==0.12.0 \
