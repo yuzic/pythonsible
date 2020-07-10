@@ -1,11 +1,15 @@
 FROM python:3.8.3
 
+ENV PYTHON_VER=python3.8
+ENV ANSIBLE_HOST_KEY_CHECKING=False
 ENV VIRTUAL_ENV=/opt/venv
+ENV ANSIBLE_STRATEGY_PLUGINS="$VIRTUAL_ENV/lib/$PYTHON_VER/site-packages/ansible_mitogen/plugins/strategy"
+ENV ANSIBLE_STRATEGY=mitogen_linear
+
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN apt-get update && apt-get install -y \
-    ansible \
     openssh-client \
     libssl-dev \
     bzip2 \
@@ -13,7 +17,10 @@ RUN apt-get update && apt-get install -y \
     git \
     tar \
 && rm -rf /var/lib/apt/lists/* \
-&& pip install \
+&& pip --no-cache-dir install --upgrade pip \
+&& pip --no-cache-dir install \
+    mitogen \
+    ansible==2.7.6 \
     pika==0.12.0 \
     pytest==5.3.5 \
     psycopg2-binary==2.8.4 \
@@ -31,4 +38,3 @@ RUN apt-get update && apt-get install -y \
     grpcio-tools==1.29.0 \
     assertpy==1.0 \
     pypika==0.37.7
-
