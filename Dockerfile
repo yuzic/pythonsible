@@ -2,9 +2,9 @@ FROM python:3.8.3
 
 ENV PYTHON_VER=python3.8
 ENV VIRTUAL_ENV=/opt/venv
-# ENV ANSIBLE_STRATEGY_PLUGINS="$VIRTUAL_ENV/lib/$PYTHON_VER/site-packages/ansible_mitogen/plugins/strategy"
-# ENV ANSIBLE_STRATEGY=mitogen_linear
-# ENV ANSIBLE_HOST_KEY_CHECKING=False
+ENV ANSIBLE_STRATEGY_PLUGINS="$VIRTUAL_ENV/lib/$PYTHON_VER/site-packages/ansible_mitogen/plugins/strategy"
+ENV ANSIBLE_STRATEGY=mitogen_linear
+ENV ANSIBLE_HOST_KEY_CHECKING=False
 
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 && rm -rf /var/lib/apt/lists/* \
 && pip --no-cache-dir install --upgrade pip \
 && pip --no-cache-dir install \
-#     mitogen \
+    mitogen \
 #     ansible==2.7.6 \
     pika==0.12.0 \
     pytest==5.3.5 \
