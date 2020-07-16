@@ -4,8 +4,8 @@ ENV PYTHON_VER=3.7
 ENV ANSIBLE_VER=2.7.7
 
 ENV VIRTUAL_ENV=/opt/venv
-ENV ANSIBLE_STRATEGY_PLUGINS="$VIRTUAL_ENV/lib/python$PYTHON_VER/site-packages/ansible_mitogen/plugins/strategy"
-ENV ANSIBLE_STRATEGY=mitogen_linear
+# ENV ANSIBLE_STRATEGY_PLUGINS="$VIRTUAL_ENV/lib/python$PYTHON_VER/site-packages/ansible_mitogen/plugins/strategy"
+# ENV ANSIBLE_STRATEGY=mitogen_linear
 ENV ANSIBLE_HOST_KEY_CHECKING=False
 
 RUN python3 -m venv $VIRTUAL_ENV
