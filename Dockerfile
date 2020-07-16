@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
 && pip --no-cache-dir install --upgrade pip \
 && pip --no-cache-dir install \
     ansible==$ANSIBLE_VER \
-    mitogen \
+#     mitogen \
     pika==0.12.0 \
     pytest==5.3.5 \
     psycopg2-binary==2.8.4 \
